@@ -63,6 +63,13 @@ fun LemonadeContent(modifier: Modifier = Modifier) {
         else -> R.drawable.lemon_restart
     }
 
+    val textResournce = when (result) {
+        0 -> stringResource(R.string.select_it)
+        1 -> stringResource(R.string.squeeze_it)
+        2 -> stringResource(R.string.drink_it)
+        else -> stringResource(R.string.restart_it)
+    }
+
     Column (modifier = modifier.fillMaxWidth()) {
         // First column
         Column(
@@ -102,7 +109,7 @@ fun LemonadeContent(modifier: Modifier = Modifier) {
             }
 
             Spacer(modifier = Modifier.height(16.dp))
-            Text("Picture Text")
+            Text("${textResournce}")
         }
     }
 }
